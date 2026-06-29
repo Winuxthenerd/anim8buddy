@@ -1,0 +1,144 @@
+.trivia {
+  background: #fff8f5;
+  padding: 80px 48px;
+  text-align: center;
+}
+
+.trivia-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.trivia-label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ff6b35;
+  margin-bottom: 20px;
+}
+
+.trivia-question {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a2e;
+  line-height: 1.5;
+  margin-bottom: 36px;
+}
+
+.trivia-options {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.trivia-option {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  background: white;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1a1a2e;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+}
+
+.trivia-option:hover {
+  border-color: #ff6b35;
+  background: #fff3ee;
+}
+
+.trivia-option.selected {
+  border-color: #ff6b35;
+  background: #fff3ee;
+}
+
+.trivia-option.correct {
+  border-color: #22c55e;
+  background: #f0fdf4;
+  color: #15803d;
+}
+
+.trivia-option.wrong {
+  border-color: #ef4444;
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.option-letter {
+  background: #f0f0f0;
+  color: #555;
+  font-weight: 700;
+  font-size: 14px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.trivia-option.correct .option-letter {
+  background: #22c55e;
+  color: white;
+}
+
+.trivia-option.wrong .option-letter {
+  background: #ef4444;
+  color: white;
+}
+
+.trivia-submit {
+  background: #ff6b35;
+  color: white;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-bottom: 24px;
+}
+
+.trivia-submit:hover {
+  background: #e85d2a;
+}
+
+.trivia-submit:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.trivia-result {
+  padding: 20px 28px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.result-correct {
+  background: #f0fdf4;
+  color: #15803d;
+  border: 2px solid #22c55e;
+}
+
+.result-wrong {
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 2px solid #ef4444;
+}
+
+.trivia-footer {
+  font-size: 13px;
+  color: #aaa;
+  margin-top: 8px;
+}
