@@ -1,7 +1,7 @@
 import React from 'react'
 import './Footer.css'
 
-function Footer() {
+function Footer({ setPage }) {
   const currentYear = new Date().getFullYear()
 
   return (
@@ -20,11 +20,12 @@ function Footer() {
 
         <div className="footer-links">
           <div className="footer-col">
-            <h4>Explore</h4>
-            <a href="#">Browse Catalog</a>
-            <a href="#">New Releases</a>
-            <a href="#">Top Rated</a>
-            <a href="#">Bundle Packs</a>
+           <h4>Explore</h4>
+           <a href="#" onClick={() => setPage('collections')}>Movie Collections</a>
+           <a href="#" onClick={() => setPage('faqs')}>FAQs</a>
+           <a href="#" onClick={() => setPage('toonzhub')}>ToonzHub</a>
+           <a href="#" onClick={() => setPage('toonzseries')}>ToonzSeries</a>
+           <a href="#" onClick={() => setPage('toppicks')}>Top Picks</a>
           </div>
           <div className="footer-col">
             <h4>Services</h4>
