@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import './ToonzHub.css'
 
 const studios = [
@@ -9,18 +9,18 @@ const studios = [
       { title: 'Finding Nemo', description: 'A clownfish searches the ocean for his missing son.' },
       { title: 'The Incredibles', description: 'A family of superheroes tries to live a normal life.' },
       { title: 'Up', description: 'An old man flies his house to South America by balloon.' },
-      { title: 'Inside Out', description: 'The emotions inside a girl\'s head come to life.' },
+      { title: 'Inside Out', description: "The emotions inside a girl's head come to life." },
       { title: 'Coco', description: 'A boy visits the land of the dead to find his great-great-grandfather.' },
     ],
   },
   {
     name: 'Disney',
     movies: [
-      { title: 'The Lion King', description: 'A young lion prince flees his kingdom after his father\'s murder.' },
+      { title: 'The Lion King', description: "A young lion prince flees his kingdom after his father's murder." },
       { title: 'Aladdin', description: 'A street rat finds a magic lamp and falls for a princess.' },
       { title: 'Moana', description: 'A Polynesian girl sets sail to save her people.' },
       { title: 'Frozen', description: 'A princess sets off to find her sister whose icy powers trap their kingdom.' },
-      { title: 'Mulan', description: 'A young woman disguises herself as a man to take her father\'s place in the army.' },
+      { title: 'Mulan', description: "A young woman disguises herself as a man to take her father's place in the army." },
       { title: 'Encanto', description: 'A Colombian family discovers one child has no magical gift.' },
     ],
   },
@@ -60,12 +60,55 @@ const studios = [
 ]
 
 function StudioRow({ studio }) {
+  const viewportRef = useRef(null)
+  const animationRef = useRef(null)
+  const scrollPos = useRef(0)
+  const isPaused = useRef(false)
+
+  const repeated = [
+    ...studio.movies,
+    ...studio.movies,
+    ...studio.movies,
+    ...studio.movies,
+  ]
+
+  useEffect(() => {
+    const viewport = viewportRef.current
+    if (!viewport) return
+
+    const step = () => {
+      if (!isPaused.current) {
+        scrollPos.current += 0.6
+        if (scrollPos.current >= viewport.scrollWidth / 2) {
+          scrollPos.current = 0
+          viewport.scrollLeft = 0
+        }
+        viewport.scrollLeft = scrollPos.current
+      }
+      animationRef.current = requestAnimationFrame(step)
+    }
+
+    animationRef.current = requestAnimationFrame(step)
+
+    const pause = () => { isPaused.current = true }
+    const resume = () => { isPaused.current = false }
+
+    viewport.addEventListener('mouseenter', pause)
+    viewport.addEventListener('mouseleave', resume)
+
+    return () => {
+      cancelAnimationFrame(animationRef.current)
+      viewport.removeEventListener('mouseenter', pause)
+      viewport.removeEventListener('mouseleave', resume)
+    }
+  }, [])
+
   return (
     <div className="studio-section">
       <h2 className="studio-name">{studio.name}</h2>
-      <div className="studio-viewport">
+      <div className="studio-viewport" ref={viewportRef}>
         <div className="studio-track">
-          {[...studio.movies, ...studio.movies].map((movie, index) => (
+          {repeated.map((movie, index) => (
             <div className="studio-card" key={index}>
               <div className="studio-card-image">
                 <span className="card-placeholder-text">{movie.title}</span>

@@ -36,7 +36,7 @@
 }
 
 .studio-viewport {
-  overflow-x: auto;
+  overflow-x: scroll;
   scrollbar-width: none;
   cursor: grab;
 }
@@ -53,17 +53,7 @@
   display: flex;
   gap: 16px;
   width: max-content;
-  animation: studioSlide 40s linear infinite;
   padding-bottom: 24px;
-}
-
-.studio-track:hover {
-  animation-play-state: paused;
-}
-
-@keyframes studioSlide {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
 }
 
 .studio-card {
