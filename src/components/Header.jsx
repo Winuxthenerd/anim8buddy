@@ -1,22 +1,27 @@
 import React, { useState } from 'react'
 import './Header.css'
 
-function Header() {
+function Header({ setPage }) {
   const [menuOpen, setMenuOpen] = useState(false)
+
+  const navigate = (page) => {
+    setPage(page)
+    setMenuOpen(false)
+  }
 
   return (
     <header className="header">
-      <div className="header-logo">
+      <div className="header-logo" onClick={() => navigate('home')} style={{ cursor: 'pointer' }}>
         <span className="logo-icon">▶</span>
         <span className="logo-text">Anim8buddy</span>
       </div>
 
       <nav className={`header-nav ${menuOpen ? 'open' : ''}`}>
-        <a href="#" onClick={() => setMenuOpen(false)}>Home</a>
-        <a href="#" onClick={() => setMenuOpen(false)}>ToonzHub</a>
-        <a href="#" onClick={() => setMenuOpen(false)}>ToonzSeries</a>
-        <a href="#" onClick={() => setMenuOpen(false)}>Top Picks</a>
-        <a href="#" onClick={() => setMenuOpen(false)}>FAQs</a>
+        <a href="#" onClick={() => navigate('home')}>Home</a>
+        <a href="#" onClick={() => navigate('toonzhub')}>ToonzHub</a>
+        <a href="#" onClick={() => navigate('toonzseries')}>ToonzSeries</a>
+        <a href="#" onClick={() => navigate('toppicks')}>Top Picks</a>
+        <a href="#" onClick={() => navigate('faqs')}>FAQs</a>
       </nav>
 
       <button
