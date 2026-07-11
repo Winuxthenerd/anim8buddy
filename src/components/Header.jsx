@@ -13,10 +13,10 @@ function Header() {
 
       <nav className={`header-nav ${menuOpen ? 'open' : ''}`}>
         <a href="#" onClick={() => setMenuOpen(false)}>Home</a>
-        <a href="#" onClick={() => setMenuOpen(false)}>Browse</a>
-        <a href="#" onClick={() => setMenuOpen(false)}>Request</a>
-        <a href="#" onClick={() => setMenuOpen(false)}>Flash Drives</a>
-        <a href="#" onClick={() => setMenuOpen(false)}>Login</a>
+        <a href="#" onClick={() => setMenuOpen(false)}>ToonzHub</a>
+        <a href="#" onClick={() => setMenuOpen(false)}>ToonzSeries</a>
+        <a href="#" onClick={() => setMenuOpen(false)}>Top Picks</a>
+        <a href="#" onClick={() => setMenuOpen(false)}>FAQs</a>
       </nav>
 
       <button
