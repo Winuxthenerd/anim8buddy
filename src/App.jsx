@@ -7,13 +7,19 @@ import Collections from './components/Collections'
 import Footer from './components/Footer'
 import ToonzHub from './pages/ToonzHub.jsx'
 import FAQs from './pages/FAQs.jsx'
+import DisneyPage from './pages/DisneyPage.jsx'
+import NetflixPage from './pages/NetflixPage.jsx'
+import DreamWorksPage from './pages/DreamWorksPage.jsx'
+import PixarPage from './pages/PixarPage.jsx'
+import TwentiethPage from './pages/TwentiethPage.jsx'
+import IlluminationPage from './pages/IlluminationPage.jsx'
 
 function App() {
   const [page, setPage] = useState('home')
-  
+
   useEffect(() => {
     window.scrollTo(0, 0)
-      }, [page])
+  }, [page])
 
   return (
     <div>
@@ -25,7 +31,7 @@ function App() {
           <Collections />
         </>
       )}
-      {page === 'toonzhub' && <ToonzHub />}
+      {page === 'toonzhub' && <ToonzHub setPage={setPage} />}
       {page === 'faqs' && <FAQs />}
       {page === 'collections' && (
         <>
@@ -33,6 +39,12 @@ function App() {
           <Collections />
         </>
       )}
+      {page === 'disney' && <DisneyPage />}
+      {page === 'netflix' && <NetflixPage />}
+      {page === 'dreamworks' && <DreamWorksPage />}
+      {page === 'pixar' && <PixarPage />}
+      {page === 'twentieth' && <TwentiethPage />}
+      {page === 'illumination' && <IlluminationPage />}
       <Footer setPage={setPage} />
     </div>
   )

@@ -1,0 +1,62 @@
+import React from 'react'
+import StudioPage from '../components/StudioPage'
+
+const movies = [
+  { title: 'Antz', year: 1998, description: 'A lowly worker ant falls for a princess and accidentally becomes a hero.' },
+  { title: 'The Prince of Egypt', year: 1998, description: 'The story of Moses and his journey to free the Hebrew slaves from Egypt.' },
+  { title: 'The Road to El Dorado', year: 2000, description: 'Two con men discover the legendary city of gold in the New World.' },
+  { title: 'Chicken Run', year: 2000, description: 'A group of chickens plan a daring escape from a farm before they become pies.' },
+  { title: 'Joseph: King of Dreams', year: 2000, description: 'The biblical story of Joseph and his coat of many colors.' },
+  { title: 'Shrek', year: 2001, description: 'A grumpy ogre goes on a quest to rescue a princess from a dragon-guarded castle.' },
+  { title: 'Spirit: Stallion of the Cimarron', year: 2002, description: 'A wild stallion is captured and fights to regain his freedom.' },
+  { title: 'Sinbad: Legend of the Seven Seas', year: 2003, description: 'The legendary sailor goes on a perilous voyage to recover a stolen book.' },
+  { title: 'Shrek 2', year: 2004, description: 'Shrek and Fiona visit her parents and face a fairy godmother with other plans.' },
+  { title: 'Shark Tale', year: 2004, description: 'A fish at the bottom of the ocean food chain pretends to be a shark slayer.' },
+  { title: 'Madagascar', year: 2005, description: 'Zoo animals escape and find themselves stranded on the island of Madagascar.' },
+  { title: 'Wallace & Gromit: The Curse of the Were-Rabbit', year: 2005, description: 'Wallace and Gromit investigate a mystery threatening the town vegetable competition.' },
+  { title: 'Over the Hedge', year: 2006, description: 'A fast-talking raccoon teaches woodland animals to raid suburban homes for food.' },
+  { title: 'Flushed Away', year: 2006, description: 'A pampered pet mouse is flushed into the sewer world of London.' },
+  { title: 'Shrek the Third', year: 2007, description: 'Shrek must find the rightful heir to Far Far Away before reluctantly becoming king.' },
+  { title: 'Bee Movie', year: 2007, description: 'A bee sues the human race for stealing honey and upsets the natural balance.' },
+  { title: 'Kung Fu Panda', year: 2008, description: 'A clumsy panda is unexpectedly chosen as the legendary Dragon Warrior.' },
+  { title: 'Madagascar: Escape 2 Africa', year: 2008, description: 'The zoo animals attempt to fly back to New York but crash-land in Africa.' },
+  { title: 'Monsters vs. Aliens', year: 2009, description: 'A woman transformed into a giant joins a team of monsters to fight aliens.' },
+  { title: 'How to Train Your Dragon', year: 2010, description: 'A Viking boy befriends the dragon he was supposed to kill.' },
+  { title: 'Shrek Forever After', year: 2010, description: 'Shrek makes a deal that leads to an alternate reality where he never existed.' },
+  { title: 'Megamind', year: 2010, description: 'A supervillain defeats his hero and must deal with the consequences.' },
+  { title: 'Kung Fu Panda 2', year: 2011, description: 'Po must face a new villain while discovering the secret of his past.' },
+  { title: 'Puss in Boots', year: 2011, description: 'The legendary outlaw cat goes on a journey before his Shrek adventures.' },
+  { title: 'Madagascar 3: Europe\'s Most Wanted', year: 2012, description: 'The gang joins a travelling circus to get back to New York.' },
+  { title: 'Rise of the Guardians', year: 2012, description: 'Santa Claus, the Easter Bunny and other legends unite to protect children.' },
+  { title: 'The Croods', year: 2013, description: 'A prehistoric family goes on a journey through a dangerous world.' },
+  { title: 'Turbo', year: 2013, description: 'A snail gains the ability to go incredibly fast and enters the Indy 500.' },
+  { title: 'Mr. Peabody & Sherman', year: 2014, description: 'A genius dog and his boy travel through history in a time machine.' },
+  { title: 'How to Train Your Dragon 2', year: 2014, description: 'Hiccup discovers a secret ice cave and comes face to face with a new threat.' },
+  { title: 'Penguins of Madagascar', year: 2014, description: 'The penguins team up with a spy organisation to save the world.' },
+  { title: 'Home', year: 2015, description: 'An alien on the run from his own people befriends a human girl.' },
+  { title: 'Kung Fu Panda 3', year: 2016, description: 'Po reunites with his biological father and discovers a secret panda village.' },
+  { title: 'Trolls', year: 2016, description: 'Optimistic Poppy and grumpy Branch embark on an adventure to save the Trolls.' },
+  { title: 'The Boss Baby', year: 2017, description: 'A baby in a suit arrives and must team up with his older brother against puppies.' },
+  { title: 'Captain Underpants: The First Epic Movie', year: 2017, description: 'Two boys hypnotise their principal into becoming their comic book superhero.' },
+  { title: 'How to Train Your Dragon: The Hidden World', year: 2019, description: 'Hiccup discovers a hidden dragon utopia while facing a threat to all dragons.' },
+  { title: 'Abominable', year: 2019, description: 'A teenage girl discovers a yeti on her roof and helps him get back home.' },
+  { title: 'Trolls World Tour', year: 2020, description: 'Poppy and Branch discover that there are other troll tribes ruled by music.' },
+  { title: 'The Croods: A New Age', year: 2020, description: 'The Croods find a walled paradise but must share it with another family.' },
+  { title: 'Spirit Untamed', year: 2021, description: 'A headstrong girl befriends a wild horse and together they go on an adventure.' },
+  { title: 'The Boss Baby: Family Business', year: 2021, description: 'The brothers must go undercover as babies to save the world.' },
+  { title: 'The Bad Guys', year: 2022, description: 'A gang of criminal animals attempt to become good for the first time.' },
+  { title: 'Puss in Boots: The Last Wish', year: 2022, description: 'Puss in Boots discovers he has only one life left and seeks a wishing star.' },
+  { title: 'Ruby Gillman, Teenage Kraken', year: 2023, description: 'A shy teenager discovers she is descended from a legendary sea monster.' },
+  { title: 'Trolls Band Together', year: 2023, description: 'Poppy helps Branch reunite with his brothers to save a fellow member.' },
+  { title: 'Kung Fu Panda 4', year: 2024, description: 'Po must find a new Dragon Warrior while facing a powerful shape-shifting villain.' },
+  { title: 'The Wild Robot', year: 2024, description: 'A robot marooned on an island must learn to adapt and care for an orphaned gosling.' },
+  { title: 'Dog Man', year: 2025, description: 'A part-dog, part-human police officer fights crime in a quirky comic-inspired world.' },
+  { title: 'The Bad Guys 2', year: 2025, description: 'The reformed bad guys return for another adventure.' },
+  { title: "Gabby's Dollhouse: The Movie", year: 2025, description: 'The beloved animated series makes its big screen debut.' },
+]
+
+function DreamWorksPage() {
+  return <StudioPage name="DreamWorks" color="#00857d" movies={movies} />
+}
+
+export default DreamWorksPage
