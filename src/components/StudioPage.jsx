@@ -1,4 +1,5 @@
 import React from 'react'
+import MovieCard from './MovieCard'
 import './StudioPage.css'
 
 function StudioPage({ name, color, movies }) {
@@ -10,17 +11,13 @@ function StudioPage({ name, color, movies }) {
       </div>
       <div className="studio-page-grid">
         {movies.map((movie, index) => (
-          <div className="sp-card" key={index}>
-            <div className="sp-card-image" style={{ background: color }}>
-              <span className="sp-placeholder">{movie.title}</span>
-            </div>
-            <div className="sp-card-info">
-              <h3 className="sp-card-title">{movie.title}</h3>
-              <p className="sp-card-year">{movie.year}</p>
-              <p className="sp-card-desc">{movie.description}</p>
-              <button className="sp-download-btn">Download</button>
-            </div>
-          </div>
+          <MovieCard
+            key={index}
+            title={movie.title}
+            year={movie.year}
+            description={movie.description}
+            color={color}
+          />
         ))}
       </div>
     </div>
