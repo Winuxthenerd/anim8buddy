@@ -7,6 +7,7 @@ import Collections from './components/Collections'
 import Footer from './components/Footer'
 import ToonzHub from './pages/ToonzHub.jsx'
 import FAQs from './pages/FAQs.jsx'
+import ToonzSeries from './pages/ToonzSeries.jsx'
 import DisneyPage from './pages/DisneyPage.jsx'
 import NetflixPage from './pages/NetflixPage.jsx'
 import DreamWorksPage from './pages/DreamWorksPage.jsx'
@@ -33,6 +34,7 @@ function App() {
       )}
       {page === 'toonzhub' && <ToonzHub setPage={setPage} />}
       {page === 'faqs' && <FAQs />}
+      {page === 'toonzseries' && <ToonzSeries setPage={setPage} />}
       {page === 'collections' && (
         <>
           <Hero />

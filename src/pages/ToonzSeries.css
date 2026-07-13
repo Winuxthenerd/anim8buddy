@@ -1,0 +1,99 @@
+.toonzseries {
+  min-height: 100vh;
+  background: #f9f9f9;
+  padding-bottom: 80px;
+}
+
+.toonzseries-header {
+  text-align: center;
+  padding: 64px 48px 48px;
+  background: #ffffff;
+  border-bottom: 1px solid #eee;
+}
+
+.toonzseries-title {
+  font-size: 40px;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin-bottom: 12px;
+}
+
+.toonzseries-subtitle {
+  font-size: 16px;
+  color: #888;
+}
+
+.series-section {
+  padding: 48px 0 0 48px;
+}
+
+.series-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 48px;
+  margin-bottom: 24px;
+}
+
+.series-name {
+  font-size: 26px;
+  font-weight: 800;
+  color: #1a1a2e;
+}
+
+.view-all-btn {
+  background: none;
+  border: 2px solid #ff6b35;
+  color: #ff6b35;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.view-all-btn:hover {
+  background: #ff6b35;
+  color: white;
+}
+
+.series-viewport {
+  overflow-x: scroll;
+  scrollbar-width: none;
+  cursor: grab;
+}
+
+.series-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.series-viewport:active {
+  cursor: grabbing;
+}
+
+.series-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  padding-bottom: 24px;
+}
+
+.series-card {
+  width: 200px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .series-section {
+    padding: 40px 0 0 24px;
+  }
+
+  .series-section-header {
+    padding-right: 24px;
+  }
+
+  .series-card {
+    width: 170px;
+  }
+}
