@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react'
 import './ToonzHub.css'
+import MovieCard from '../components/MovieCard'
 
 const studios = [
   {
@@ -127,13 +128,11 @@ function StudioRow({ studio, setPage }) {
         <div className="studio-track">
           {repeated.map((movie, index) => (
             <div className="studio-card" key={index}>
-              <div className="studio-card-image" style={{ background: studio.color }}>
-                <span className="card-placeholder-text">{movie.title}</span>
-              </div>
-              <div className="studio-card-info">
-                <h3 className="studio-card-title">{movie.title}</h3>
-                <p className="studio-card-year">{movie.year}</p>
-              </div>
+              <MovieCard
+                title={movie.title}
+                year={movie.year}
+                color={studio.color}
+              />
             </div>
           ))}
         </div>

@@ -7,11 +7,13 @@ function MovieCard({ title, year, description, color }) {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    getMoviePoster(title, year).then((url) => {
-      setPoster(url)
-      setLoading(false)
-    })
-  }, [title, year])
+  console.log('Fetching poster for:', title, year)
+  getMoviePoster(title, year).then((url) => {
+    console.log('Got poster URL:', url)
+    setPoster(url)
+    setLoading(false)
+  })
+ }, [title, year])
 
   return (
     <div className="movie-card">
