@@ -1,0 +1,43 @@
+.toppicks {
+  min-height: 100vh;
+  background: #f9f9f9;
+  padding-bottom: 80px;
+}
+
+.toppicks-header {
+  text-align: center;
+  padding: 64px 48px 48px;
+  background: #ffffff;
+  border-bottom: 1px solid #eee;
+}
+
+.toppicks-title {
+  font-size: 40px;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin-bottom: 12px;
+}
+
+.toppicks-subtitle {
+  font-size: 16px;
+  color: #888;
+}
+
+.toppicks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 24px;
+  padding: 48px;
+}
+
+@media (max-width: 768px) {
+  .toppicks-header {
+    padding: 48px 24px 36px;
+  }
+
+  .toppicks-grid {
+    padding: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+  }
+}

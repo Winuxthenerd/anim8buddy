@@ -14,6 +14,7 @@ import DreamWorksPage from './pages/DreamWorksPage.jsx'
 import PixarPage from './pages/PixarPage.jsx'
 import TwentiethPage from './pages/TwentiethPage.jsx'
 import IlluminationPage from './pages/IlluminationPage.jsx'
+import TopPicks from './pages/TopPicks.jsx'
 
 function App() {
   const [page, setPage] = useState('home')
@@ -35,6 +36,7 @@ function App() {
       {page === 'toonzhub' && <ToonzHub setPage={setPage} />}
       {page === 'faqs' && <FAQs />}
       {page === 'toonzseries' && <ToonzSeries setPage={setPage} />}
+      {page === 'toppicks' && <TopPicks />}
       {page === 'collections' && (
         <>
           <Hero />
