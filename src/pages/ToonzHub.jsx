@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef } from 'react'
 import './ToonzHub.css'
 import MovieCard from '../components/MovieCard'
 
@@ -79,50 +79,6 @@ const studios = [
 
 function StudioRow({ studio, setPage }) {
   const viewportRef = useRef(null)
-  const animationRef = useRef(null)
-  const scrollPos = useRef(0)
-  const isPaused = useRef(false)
-
-  useEffect(() => {
-  const viewport = viewportRef.current
-  if (!viewport) return
-
-  const step = () => {
-    if (!isPaused.current) {
-      scrollPos.current += 0.6
-      if (scrollPos.current >= viewport.scrollWidth / 2) {
-        scrollPos.current = 0
-        viewport.scrollLeft = 0
-      }
-      viewport.scrollLeft = scrollPos.current
-    }
-    animationRef.current = requestAnimationFrame(step)
-  }
-
-  animationRef.current = requestAnimationFrame(step)
-
-  const pause = () => { isPaused.current = true }
-  const resume = () => { isPaused.current = false }
-
-  const touchResume = () => {
-    setTimeout(() => { isPaused.current = false }, 1000)
-  }
-
-  viewport.addEventListener('mouseenter', pause)
-  viewport.addEventListener('mouseleave', resume)
-  viewport.addEventListener('touchstart', pause)
-  viewport.addEventListener('touchend', touchResume)
-
-  return () => {
-    cancelAnimationFrame(animationRef.current)
-    viewport.removeEventListener('mouseenter', pause)
-    viewport.removeEventListener('mouseleave', resume)
-    viewport.removeEventListener('touchstart', pause)
-    viewport.removeEventListener('touchend', touchResume)
-  }
-}, [])
-
-  const repeated = [...studio.movies, ...studio.movies, ...studio.movies, ...studio.movies]
 
   return (
     <div className="studio-section">
@@ -134,7 +90,7 @@ function StudioRow({ studio, setPage }) {
       </div>
       <div className="studio-viewport" ref={viewportRef}>
         <div className="studio-track">
-          {repeated.map((movie, index) => (
+          {studio.movies.map((movie, index) => (
             <div className="studio-card" key={index}>
               <MovieCard
                 title={movie.title}

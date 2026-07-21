@@ -1,5 +1,5 @@
 .collections {
-  padding: 80px 48px;
+  padding: 80px 0;
   background: #ffffff;
   overflow: hidden;
 }
@@ -7,6 +7,7 @@
 .collections-header {
   text-align: center;
   margin-bottom: 48px;
+  padding: 0 48px;
 }
 
 .collections-title {

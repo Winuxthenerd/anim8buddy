@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef } from 'react'
 import MovieCard from '../components/MovieCard'
 import './ToonzSeries.css'
 
@@ -43,55 +43,6 @@ const categories = [
 
 function SeriesRow({ category, setPage }) {
   const viewportRef = useRef(null)
-  const animationRef = useRef(null)
-  const scrollPos = useRef(0)
-  const isPaused = useRef(false)
-
-  const repeated = [
-    ...category.series,
-    ...category.series,
-    ...category.series,
-    ...category.series,
-  ]
-
-  useEffect(() => {
-  const viewport = viewportRef.current
-  if (!viewport) return
-
-  const step = () => {
-    if (!isPaused.current) {
-      scrollPos.current += 0.6
-      if (scrollPos.current >= viewport.scrollWidth / 2) {
-        scrollPos.current = 0
-        viewport.scrollLeft = 0
-      }
-      viewport.scrollLeft = scrollPos.current
-    }
-    animationRef.current = requestAnimationFrame(step)
-  }
-
-  animationRef.current = requestAnimationFrame(step)
-
-  const pause = () => { isPaused.current = true }
-  const resume = () => { isPaused.current = false }
-
-  const touchResume = () => {
-    setTimeout(() => { isPaused.current = false }, 1000)
-  }
-
-  viewport.addEventListener('mouseenter', pause)
-  viewport.addEventListener('mouseleave', resume)
-  viewport.addEventListener('touchstart', pause)
-  viewport.addEventListener('touchend', touchResume)
-
-  return () => {
-    cancelAnimationFrame(animationRef.current)
-    viewport.removeEventListener('mouseenter', pause)
-    viewport.removeEventListener('mouseleave', resume)
-    viewport.removeEventListener('touchstart', pause)
-    viewport.removeEventListener('touchend', touchResume)
-  }
-}, [])
 
   return (
     <div className="series-section">
@@ -103,7 +54,7 @@ function SeriesRow({ category, setPage }) {
       </div>
       <div className="series-viewport" ref={viewportRef}>
         <div className="series-track">
-          {repeated.map((item, index) => (
+          {category.series.map((item, index) => (
             <div className="series-card" key={index}>
               <MovieCard
                 title={item.title}
