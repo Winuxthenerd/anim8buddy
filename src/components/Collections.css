@@ -1,13 +1,12 @@
 .collections {
   padding: 80px 0;
   background: #ffffff;
-  overflow: hidden;
 }
 
 .collections-header {
   text-align: center;
   margin-bottom: 48px;
-  padding: 0 48px;
+  padding: 0 24px;
 }
 
 .collections-title {
@@ -27,6 +26,7 @@
   cursor: grab;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
+  padding: 0 24px;
 }
 
 .collections-viewport::-webkit-scrollbar {
@@ -39,32 +39,15 @@
 
 .collections-track {
   display: flex;
-  gap: 20px;
+  gap: 16px;
   width: max-content;
-  padding: 8px 0 16px;
-}
-
-.collections-track:hover {
-  animation-play-state: paused;
-}
-
-.collections-viewport::-webkit-scrollbar {
-  display: none;
-}
-
-@keyframes slide {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  padding-bottom: 16px;
 }
 
 .collection-card {
   position: relative;
-  width: 260px;
-  height: 260px;
+  width: 220px;
+  height: 220px;
   border-radius: 14px;
   overflow: hidden;
   flex-shrink: 0;
@@ -89,34 +72,34 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 20px;
+  padding: 16px;
   background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
 }
 
 .card-title {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   color: #ffffff;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .card-desc {
-  font-size: 13px;
+  font-size: 12px;
   color: rgba(255,255,255,0.8);
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 @media (max-width: 768px) {
   .collections {
-    padding: 60px 0 60px 24px;
-  }
-
-  .collections-header {
-    padding-right: 24px;
+    padding: 60px 0;
   }
 
   .collection-card {
-    width: 220px;
-    height: 220px;
+    width: 180px;
+    height: 180px;
+  }
+
+  .collections-viewport {
+    padding: 0 16px;
   }
 }
