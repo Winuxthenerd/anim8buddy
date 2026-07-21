@@ -75,15 +75,6 @@ function Hero({setPage}) {
           <button className="hero-btn" onClick={() => setPage('browse')}>Browse Catalog</button>
         </div>
       </div>
-      <div className="hero-dots">
-        {slides.map((_, index) => (
-          <span
-            key={index}
-            className={`dot ${index === current ? 'active' : ''}`}
-            onClick={() => setCurrent(index)}
-          />
-        ))}
-      </div>
     </section>
   )
 }
