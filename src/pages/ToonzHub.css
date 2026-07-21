@@ -39,6 +39,7 @@
   overflow-x: scroll;
   scrollbar-width: none;
   cursor: grab;
+  -webkit-overflow-scrolling: touch;
 }
 
 .studio-viewport::-webkit-scrollbar {

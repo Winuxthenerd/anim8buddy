@@ -25,6 +25,7 @@
   overflow-x: auto;
   cursor: grab;
   scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 .collections-viewport::-webkit-scrollbar {
@@ -39,7 +40,7 @@
   display: flex;
   gap: 20px;
   width: max-content;
-  animation: slide 35s linear infinite;
+  padding: 8px 0 16px;
 }
 
 .collections-track:hover {

@@ -55,35 +55,43 @@ function SeriesRow({ category, setPage }) {
   ]
 
   useEffect(() => {
-    const viewport = viewportRef.current
-    if (!viewport) return
+  const viewport = viewportRef.current
+  if (!viewport) return
 
-    const step = () => {
-      if (!isPaused.current) {
-        scrollPos.current += 0.6
-        if (scrollPos.current >= viewport.scrollWidth / 2) {
-          scrollPos.current = 0
-          viewport.scrollLeft = 0
-        }
-        viewport.scrollLeft = scrollPos.current
+  const step = () => {
+    if (!isPaused.current) {
+      scrollPos.current += 0.6
+      if (scrollPos.current >= viewport.scrollWidth / 2) {
+        scrollPos.current = 0
+        viewport.scrollLeft = 0
       }
-      animationRef.current = requestAnimationFrame(step)
+      viewport.scrollLeft = scrollPos.current
     }
-
     animationRef.current = requestAnimationFrame(step)
+  }
 
-    const pause = () => { isPaused.current = true }
-    const resume = () => { isPaused.current = false }
+  animationRef.current = requestAnimationFrame(step)
 
-    viewport.addEventListener('mouseenter', pause)
-    viewport.addEventListener('mouseleave', resume)
+  const pause = () => { isPaused.current = true }
+  const resume = () => { isPaused.current = false }
 
-    return () => {
-      cancelAnimationFrame(animationRef.current)
-      viewport.removeEventListener('mouseenter', pause)
-      viewport.removeEventListener('mouseleave', resume)
-    }
-  }, [])
+  const touchResume = () => {
+    setTimeout(() => { isPaused.current = false }, 1000)
+  }
+
+  viewport.addEventListener('mouseenter', pause)
+  viewport.addEventListener('mouseleave', resume)
+  viewport.addEventListener('touchstart', pause)
+  viewport.addEventListener('touchend', touchResume)
+
+  return () => {
+    cancelAnimationFrame(animationRef.current)
+    viewport.removeEventListener('mouseenter', pause)
+    viewport.removeEventListener('mouseleave', resume)
+    viewport.removeEventListener('touchstart', pause)
+    viewport.removeEventListener('touchend', touchResume)
+  }
+}, [])
 
   return (
     <div className="series-section">
@@ -101,6 +109,7 @@ function SeriesRow({ category, setPage }) {
                 title={item.title}
                 year={item.year}
                 color={category.color}
+                hideButton={true}
               />
             </div>
           ))}

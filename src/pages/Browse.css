@@ -1,47 +1,59 @@
-.toonzseries {
+.browse {
   min-height: 100vh;
   background: #f9f9f9;
   padding-bottom: 80px;
 }
 
-.toonzseries-header {
+.browse-header {
   text-align: center;
   padding: 64px 48px 48px;
   background: #ffffff;
   border-bottom: 1px solid #eee;
 }
 
-.toonzseries-title {
+.browse-title {
   font-size: 40px;
   font-weight: 800;
   color: #1a1a2e;
   margin-bottom: 12px;
 }
 
-.toonzseries-subtitle {
+.browse-subtitle {
   font-size: 16px;
   color: #888;
 }
 
-.series-section {
-  padding: 48px 0 0 48px;
+.browse-section {
+  padding: 48px 48px 0;
 }
 
-.series-section-header {
+.browse-section-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-right: 48px;
   margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #f0f0f0;
 }
 
-.series-name {
+.browse-section-title {
   font-size: 26px;
   font-weight: 800;
   color: #1a1a2e;
 }
 
-.view-all-btn {
+.browse-subsection {
+  margin-bottom: 32px;
+}
+
+.browse-subsection-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #444;
+  margin-bottom: 16px;
+}
+
+.browse-view-all {
   background: none;
   border: 2px solid #ff6b35;
   color: #ff6b35;
@@ -51,50 +63,42 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s;
+  white-space: nowrap;
 }
 
-.view-all-btn:hover {
+.browse-view-all:hover {
   background: #ff6b35;
   color: white;
 }
 
-.series-viewport {
-  overflow-x: scroll;
+.browse-row {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
   scrollbar-width: none;
-  cursor: grab;
+  padding-bottom: 16px;
   -webkit-overflow-scrolling: touch;
 }
 
-.series-viewport::-webkit-scrollbar {
+.browse-row::-webkit-scrollbar {
   display: none;
 }
 
-.series-viewport:active {
-  cursor: grabbing;
-}
-
-.series-track {
-  display: flex;
-  gap: 16px;
-  width: max-content;
-  padding-bottom: 24px;
-}
-
-.series-card {
-  width: 200px;
+.browse-card {
+  min-width: 180px;
   flex-shrink: 0;
 }
 
 @media (max-width: 768px) {
-  .series-section {
-    padding: 40px 0 0 24px;
+  .browse-section {
+    padding: 36px 24px 0;
   }
 
-  .series-section-header {
-    padding-right: 24px;
+  .browse-header {
+    padding: 48px 24px 36px;
   }
 
-  .series-card {
-    width: 170px;
+  .browse-card {
+    min-width: 150px;
   }
 }

@@ -21,7 +21,6 @@ function Footer({ setPage }) {
         <div className="footer-links">
           <div className="footer-col">
            <h4>Explore</h4>
-           <a href="#" onClick={() => setPage('collections')}>Movie Collections</a>
            <a href="#" onClick={() => setPage('faqs')}>FAQs</a>
            <a href="#" onClick={() => setPage('toonzhub')}>ToonzHub</a>
            <a href="#" onClick={() => setPage('toonzseries')}>ToonzSeries</a>
