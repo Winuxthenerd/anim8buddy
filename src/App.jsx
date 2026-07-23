@@ -16,7 +16,6 @@ import PixarPage from './pages/PixarPage.jsx'
 import TwentiethPage from './pages/TwentiethPage.jsx'
 import IlluminationPage from './pages/IlluminationPage.jsx'
 import Shop from './pages/Shop.jsx'
-import Browse from './pages/Browse.jsx'
 import SeriesPage from './pages/SeriesPage.jsx'
 import SeriesDetail from './pages/SeriesDetail.jsx'
 
@@ -44,7 +43,6 @@ return (
         </>
       )}
       {page === 'shop' && <Shop />}
-      {page === 'browse' && <Browse setPage={setPage} navigateToSeries={navigateToSeries} />}
       {page === 'toonzhub' && <ToonzHub setPage={setPage} />}
       {page === 'toonzseries' && <ToonzSeries setPage={setPage} navigateToSeries={navigateToSeries} />}
       {page === 'faqs' && <FAQs />}
