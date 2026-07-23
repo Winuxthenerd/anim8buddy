@@ -7,7 +7,7 @@ const tshirts = [
   { id: 3, name: 'Cartoon Squad Tee', price: '₦5,500', color: 'Navy', image: 'https://placehold.co/400x400/0057b8/ffffff?text=Cartoon+Squad', link: '#' },
   { id: 4, name: 'Toonz Life Tee', price: '₦5,500', color: 'Orange', image: 'https://placehold.co/400x400/ff6b35/ffffff?text=Toonz+Life', link: '#' },
   { id: 5, name: 'Classic A8B Tee', price: '₦6,000', color: 'White', image: 'https://placehold.co/400x400/1a1a2e/ffffff?text=Classic+A8B', link: '#' },
-  { id: 6, name: 'Limited Drop Tee', price: '₦7,500', color: 'Black', image: 'https://placehold.co/400x400/111111/ffffff?text=Limited+Drop', link: '#' },
+  
 ]
 
 function Shop() {
