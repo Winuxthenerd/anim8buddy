@@ -72,7 +72,7 @@ function Hero({setPage}) {
         <div className="hero-overlay">
           <h1>Your Anime & Cartoon Hub</h1>
           <p>Download your favourite animations, anytime, anywhere — even offline.</p>
-          <button className="hero-btn" onClick={() => setPage('browse')}>Browse Catalog</button>
+          <button className="hero-btn" onClick={() => setPage('shop')}>Anim8Buddy Shop</button>
         </div>
       </div>
     </section>

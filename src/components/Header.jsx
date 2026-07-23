@@ -21,6 +21,7 @@ function Header({ setPage }) {
         <a href="#" onClick={() => navigate('toonzhub')}>ToonzHub</a>
         <a href="#" onClick={() => navigate('toonzseries')}>ToonzSeries</a>
         <a href="#" onClick={() => navigate('toppicks')}>Top Picks</a>
+        <a href="#" onClick={() => navigate('shop')}>Shop</a>
         <a href="#" onClick={() => navigate('faqs')}>FAQs</a>
       </nav>
 
