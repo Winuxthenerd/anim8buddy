@@ -18,10 +18,13 @@ import IlluminationPage from './pages/IlluminationPage.jsx'
 import Shop from './pages/Shop.jsx'
 import SeriesPage from './pages/SeriesPage.jsx'
 import SeriesDetail from './pages/SeriesDetail.jsx'
+import CollectionDetail from './pages/CollectionDetail.jsx'
+import BackToTop from './components/BackToTop.jsx'
 
 function App() {
   const [page, setPage] = useState('home')
   const [selectedSeries, setSelectedSeries] = useState(null)
+  const [selectedCollection, setSelectedCollection] = useState(null)
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -31,6 +34,10 @@ function App() {
     setSelectedSeries(series)
     setPage('series-detail')
   }
+  const navigateToCollection = (key) => {
+  setSelectedCollection(key)
+  setPage('collection-detail')
+  }
 
 return (
     <div>
@@ -39,7 +46,7 @@ return (
         <>
           <Hero setPage={setPage} />
           <Trivia />
-          <Collections />
+          <Collections navigateToCollection={navigateToCollection} />
         </>
       )}
       {page === 'shop' && <Shop />}
@@ -50,9 +57,10 @@ return (
       {page === 'collections' && (
         <>
           <Hero setPage={setPage} />
-          <Collections />
+          <Collections navigateToCollection={navigateToCollection} />
         </>
       )}
+      {page === 'collection-detail' && <CollectionDetail collectionKey={selectedCollection} setPage={setPage} />}
       {page === 'disney' && <DisneyPage />}
       {page === 'netflix' && <NetflixPage />}
       {page === 'dreamworks' && <DreamWorksPage />}
@@ -64,6 +72,7 @@ return (
       {page === 'japanese-series' && <SeriesPage category="Japanese Series" setPage={setPage} navigateToSeries={navigateToSeries} />}
       {page === 'series-detail' && <SeriesDetail series={selectedSeries} setPage={setPage} />}
       <Footer setPage={setPage} />
+      <BackToTop />
     </div>
   )
 }
