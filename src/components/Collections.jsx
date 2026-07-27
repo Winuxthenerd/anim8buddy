@@ -5,7 +5,7 @@ const collections = [
   { id: 1, title: 'Marvel', collectionKey: 'marvel', description: 'Earth\'s mightiest animated heroes assembled.', searchTitle: 'Spider-Man Into the Spider-Verse', searchYear: 2018, color: '#e23636' },
   { id: 2, title: 'DC', collectionKey: 'dc', description: 'Batman, Superman, Wonder Woman and more.', searchTitle: 'Batman The Dark Knight Returns', searchYear: 2012, color: '#0074e8' },
   { id: 3, title: 'Barbie', collectionKey: 'barbie', description: 'Magical adventures with the most iconic doll.', searchTitle: 'Barbie A Fashion Fairytale', searchYear: 2010, color: '#e91e8c' },
-  { id: 4, title: 'Scooby-Doo', collectionKey: null, description: 'Mystery Inc. solves spooky cases.', searchTitle: 'Scoob', searchYear: 2020, color: '#4caf50' },
+  { id: 4, title: 'Scooby-Doo', collectionKey: 'scoobydoo', description: 'Mystery Inc. solves spooky cases.', searchTitle: 'Scoob', searchYear: 2020, color: '#4caf50' },
   { id: 5, title: 'Detective Conan', collectionKey: 'detectiveconan', description: 'A teenage detective shrunk to a child.', searchTitle: 'Detective Conan', searchYear: 1996, color: '#1a1a2e' },
   { id: 6, title: 'Dragon Ball', collectionKey: null, description: 'Goku fights to protect Earth.', searchTitle: 'Dragon Ball Super Broly', searchYear: 2018, color: '#ff9800' },
   { id: 7, title: 'Tom and Jerry', collectionKey: null, description: 'The ultimate cat and mouse rivalry.', searchTitle: 'Tom and Jerry', searchYear: 2021, color: '#e23636' },
