@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { getMoviePoster } from '../tmdb'
+import  { useState, useEffect } from 'react'
+import {TMDB_API_KEY}from '../tmdb'
 import './CollectionDetail.css'
 
 const collections = {
@@ -348,7 +348,6 @@ function HeroImage({ title, year, color }) {
   const [poster, setPoster] = useState(null)
 
   useEffect(() => {
-    const TMDB_API_KEY = '98215a8e51a12f3bb2d627e496673e31'
     fetch(`https://api.themoviedb.org/3/search/movie?api_key=${TMDB_API_KEY}&query=${encodeURIComponent(title)}&year=${year}`)
       .then(r => r.json())
       .then(data => {
@@ -356,7 +355,7 @@ function HeroImage({ title, year, color }) {
           setPoster(`https://image.tmdb.org/t/p/original${data.results[0].backdrop_path}`)
         }
       })
-  }, [])
+  }, [title, year])
 
   return (
     <div className="cd-hero" style={{ background: color }}>
@@ -447,7 +446,7 @@ function CollectionDetail({ collectionKey, setPage }) {
             <div className="cd-summary-note">
               Shipping fee will be calculated at checkout based on your location.
             </div>
-            <button className="cd-order-btn" style={{ background: collection.color }}>
+            <button className="cd-order-btn" style={{ background: collection.color }} disabled title="Coming Soon">
               Proceed to Order
             </button>
           </div>

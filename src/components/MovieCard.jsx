@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import  { useState, useEffect } from 'react'
 import { getMoviePoster } from '../tmdb'
 import './MovieCard.css'
 
@@ -7,9 +7,7 @@ function MovieCard({ title, year, description, color, hideButton }) {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-  console.log('Fetching poster for:', title, year)
   getMoviePoster(title, year).then((url) => {
-    console.log('Got poster URL:', url)
     setPoster(url)
     setLoading(false)
   })
@@ -30,7 +28,7 @@ function MovieCard({ title, year, description, color, hideButton }) {
         <h3 className="mc-title">{title}</h3>
         <p className="mc-year">{year}</p>
         {description && <p className="mc-desc">{description}</p>}
-        {!hideButton && <button className="mc-btn">Download</button>}
+        {!hideButton && <button className="mc-btn" disabled title="Coming Soon">Download</button>}
       </div>
     </div>
   )

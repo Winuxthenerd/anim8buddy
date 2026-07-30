@@ -1,4 +1,4 @@
-const TMDB_API_KEY = '98215a8e51a12f3bb2d627e496673e31'
+export const TMDB_API_KEY = '98215a8e51a12f3bb2d627e496673e31'
 const TMDB_BASE_URL = 'https://api.themoviedb.org/3'
 const TMDB_IMAGE_BASE = 'https://image.tmdb.org/t/p/w500'
 
@@ -25,7 +25,7 @@ export async function getMoviePoster(title, year) {
     }
 
     return null
-  } catch (error) {
+  } catch {
     return null
   }
 }

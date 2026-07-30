@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import  { useState, useEffect } from 'react'
 import './Hero.css'
 
 const TMDB_API_KEY = '98215a8e51a12f3bb2d627e496673e31'

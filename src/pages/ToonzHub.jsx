@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import  { useRef } from 'react'
 import './ToonzHub.css'
 import MovieCard from '../components/MovieCard'
 

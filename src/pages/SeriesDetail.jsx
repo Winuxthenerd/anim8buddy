@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import  { useState, useEffect } from 'react'
 import { getMoviePoster } from '../tmdb'
 import './SeriesDetail.css'
 
@@ -68,7 +68,9 @@ function SeriesDetail({ series, setPage }) {
                       <span className="sd-ep-title">{ep.title}</span>
                       <span className="sd-ep-duration">{ep.duration}</span>
                     </div>
-                    <button className="sd-ep-btn">Download</button>
+                    <button className="sd-ep-btn" disabled title="Coming Soon">
+                      Download
+                    </button>
                   </div>
                 ))}
               </div>
