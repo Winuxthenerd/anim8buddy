@@ -7,7 +7,13 @@ const tshirts = [
   { id: 3, name: 'Cartoon Squad Tee', price: '₦5,500', color: 'Navy', image: 'https://placehold.co/400x400/0057b8/ffffff?text=Cartoon+Squad', link: '#' },
   { id: 4, name: 'Toonz Life Tee', price: '₦5,500', color: 'Orange', image: 'https://placehold.co/400x400/ff6b35/ffffff?text=Toonz+Life', link: '#' },
   { id: 5, name: 'Classic A8B Tee', price: '₦6,000', color: 'White', image: 'https://placehold.co/400x400/1a1a2e/ffffff?text=Classic+A8B', link: '#' },
-  
+  { id: 6, name: 'Limited Edition Tee', price: '₦7,000', color: 'Red', image: 'https://placehold.co/400x400/ff0000/ffffff?text=Limited+Edition', link: '#' },
+  { id: 7, name: 'Classic A8B Tee', price: '₦6,000', color: 'White', image: 'https://placehold.co/400x400/1a1a2e/ffffff?text=Classic+A8B', link: '#' },
+  { id: 8, name: 'Classic A8B Tee', price: '₦6,000', color: 'White', image: 'https://placehold.co/400x400/1a1a2e/ffffff?text=Classic+A8B', link: '#' },
+  { id: 9, name: 'Classic A8B Tee', price: '₦6,000', color: 'White', image: 'https://placehold.co/400x400/1a1a2e/ffffff?text=Classic+A8B', link: '#' },
+  { id: 10, name: 'Classic A8B Tee', price: '₦6,000', color: 'White', image: 'https://placehold.co/400x400/1a1a2e/ffffff?text=Classic+A8B', link: '#' },
+  { id: 11, name: 'Classic A8B Tee', price: '₦6,000', color: 'White', image: 'https://placehold.co/400x400/1a1a2e/ffffff?text=Classic+A8B', link: '#' },
+  { id: 12, name: 'Classic A8B Tee', price: '₦6,000', color: 'White', image: 'https://placehold.co/400x400/1a1a2e/ffffff?text=Classic+A8B', link: '#' },
 ]
 
 function Shop() {
