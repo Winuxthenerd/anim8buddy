@@ -1,26 +1,188 @@
+import React, { useState, useEffect } from 'react'
 import './Shop.css'
+import tee1Front from '../assets/shop/tee1-front.jpeg'
+import tee1Back from '../assets/shop/tee1-back.jpeg'
+import tee2Back from '../assets/shop/tee2-back.jpeg'
+import tee3Front from '../assets/shop/tee3-front.jpeg'
+import tee4Front from '../assets/shop/tee4-front.jpeg'
+import tee5Front from '../assets/shop/tee5-front.jpeg'
+import tee6Back from '../assets/shop/tee6-back.jpeg'
+import tee7Front from '../assets/shop/tee7-front.jpeg'
+import tee8Back from '../assets/shop/tee8-back.jpeg'
+import tee9Front from '../assets/shop/tee9-front.jpeg'
+import tee10Back from '../assets/shop/tee10-back.jpeg'
+import hoodie1Back from '../assets/shop/hoodie1-back.jpeg'
+import hoodie2Back from '../assets/shop/hoodie2-back.jpeg'
+
+
 
 const tshirts = [
-  { id: 1, name: 'Anim8buddy Logo Tee', price: '₦5,500', color: 'White', image: 'https://placehold.co/400x400/1a1a2e/ffffff?text=Logo+Tee', link: '#' },
-  { id: 2, name: 'Anime Vibes Tee', price: '₦5,500', color: 'Black', image: 'https://placehold.co/400x400/111111/ffffff?text=Anime+Vibes', link: '#' },
-  { id: 3, name: 'Cartoon Squad Tee', price: '₦5,500', color: 'Navy', image: 'https://placehold.co/400x400/0057b8/ffffff?text=Cartoon+Squad', link: '#' },
-  { id: 4, name: 'Toonz Life Tee', price: '₦5,500', color: 'Orange', image: 'https://placehold.co/400x400/ff6b35/ffffff?text=Toonz+Life', link: '#' },
-  { id: 5, name: 'Classic A8B Tee', price: '₦6,000', color: 'White', image: 'https://placehold.co/400x400/1a1a2e/ffffff?text=Classic+A8B', link: '#' },
-  { id: 6, name: 'Limited Edition Tee', price: '₦7,000', color: 'Red', image: 'https://placehold.co/400x400/ff0000/ffffff?text=Limited+Edition', link: '#' },
-  { id: 7, name: 'Classic A8B Tee', price: '₦6,000', color: 'White', image: 'https://placehold.co/400x400/1a1a2e/ffffff?text=Classic+A8B', link: '#' },
-  { id: 8, name: 'Classic A8B Tee', price: '₦6,000', color: 'White', image: 'https://placehold.co/400x400/1a1a2e/ffffff?text=Classic+A8B', link: '#' },
-  { id: 9, name: 'Classic A8B Tee', price: '₦6,000', color: 'White', image: 'https://placehold.co/400x400/1a1a2e/ffffff?text=Classic+A8B', link: '#' },
-  { id: 10, name: 'Classic A8B Tee', price: '₦6,000', color: 'White', image: 'https://placehold.co/400x400/1a1a2e/ffffff?text=Classic+A8B', link: '#' },
-  { id: 11, name: 'Classic A8B Tee', price: '₦6,000', color: 'White', image: 'https://placehold.co/400x400/1a1a2e/ffffff?text=Classic+A8B', link: '#' },
-  { id: 12, name: 'Classic A8B Tee', price: '₦6,000', color: 'White', image: 'https://placehold.co/400x400/1a1a2e/ffffff?text=Classic+A8B', link: '#' },
+  {
+    id: 1,
+    name: 'Monkey D. Luffy Red Moon Tee',
+    price: '₦5,500',
+    color: 'Black',
+    front: tee1Front,
+    back: tee1Back,
+    link: '#',
+  },
+  {
+    id: 2,
+    name: 'Monkey D. Luffy Full Body Tee',
+    price: '₦5,500',
+    color: 'White',
+    front: 'https://placehold.co/400x500/111111/ffffff?text=Front',
+    back: tee2Back,
+    link: '#',
+  },
+  {
+    id: 3,
+    name: 'Straw Hat Pirates Unity Tee',
+    price: '₦5,500',
+    color: 'White',
+    front: tee3Front,
+    back: 'https://placehold.co/400x500/0057b8/ffffff?text=Back',
+    link: '#',
+  },
+  {
+    id: 4,
+    name: 'Monkey D. Luffy Manga Panel Tee',
+    price: '₦5,500',
+    color: 'White',
+    front: tee4Front,
+    back: 'https://placehold.co/400x500/ff6b35/ffffff?text=Back',
+    link: '#',
+  },
+  {
+    id: 5,
+    name: 'Roronoa Zoro Katana Tee',
+    price: '₦6,000',
+    color: 'Red',
+    front: tee5Front,
+    back: 'https://placehold.co/400x500/1a1a2e/ffffff?text=Back',
+    link: '#',
+  },
+  {
+    id: 6,
+    name: 'Roronoa Zoro Sword Stance Tee',
+    price: '₦7,500',
+    color: 'White',
+    front: 'https://placehold.co/400x500/111111/ffffff?text=Front',
+    back: tee6Back,
+    link: '#',
+  },
+  {
+    id: 7,
+    name: 'Trafalgar Law Tee',
+    price: '₦6,500',
+    color: 'White',
+    front: tee7Front,
+    back: 'https://placehold.co/400x500/111111/ffffff?text=Back',
+    link: '#',
+  },
+  {
+    id: 8,
+    name: 'King of the Pirates Tee',
+    price: '₦6,500',
+    color: 'Black',
+    front: 'https://placehold.co/400x500/1a1a2e/ffffff?text=Front',
+    back: tee8Back,
+    link: '#',
+  },
+  {
+    id: 9,
+    name: 'Roronoa Zoro Tee ',
+    price: '₦6,500',
+    color: 'Grey',
+    front: tee9Front,
+    back: 'https://placehold.co/400x500/0057b8/ffffff?text=Back',
+    link: '#',
+  },
+  {
+    id: 10,
+    name: 'Monkey D. Luffy Sketch Tee',
+    price: '₦6,500',
+    color: 'Black',
+    front: 'https://placehold.co/400x500/111111/ffffff?text=Front',
+    back: tee10Back,
+    link: '#',
+  },
+  {
+    id: 11,
+    name: 'Luffy, Zoro, and Sanji Hoodie',
+    price: '₦6,500',
+    color: 'Black',
+    front: 'https://placehold.co/400x500/1a1a2e/ffffff?text=Front',
+    back: hoodie1Back,
+    link: '#',
+  },
+  {
+    id: 12,
+    name: 'Monkey D. Luffy Collage Hoodie',
+    price: '₦6,500',
+    color: 'White',
+    front: 'https://placehold.co/400x500/e23636/ffffff?text=Front',
+    back: hoodie2Back,
+    link: '#',
+  },
 ]
+
+function ShopCard({ item }) {
+  const [active, setActive] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActive(prev => prev === 0 ? 1 : 0)
+    }, 4500)
+    return () => clearInterval(timer)
+  }, [])
+
+  const images = [item.front, item.back]
+  const labels = ['Front', 'Back']
+
+  return (
+    <div className="shop-card">
+      <div className="shop-card-left">
+        <img
+          src={images[active]}
+          alt={`${item.name} ${labels[active]}`}
+          className="shop-card-main-img"
+        />
+      </div>
+      <div className="shop-card-right">
+        <div className="shop-card-thumbnails">
+          {images.map((img, index) => (
+            <div
+              key={index}
+              className={`shop-thumb ${active === index ? 'active' : ''}`}
+              onClick={() => setActive(index)}
+            >
+              <img src={img} alt={labels[index]} />
+              <span className="shop-thumb-label">{labels[index]}</span>
+            </div>
+          ))}
+        </div>
+        <div className="shop-card-info">
+          <h3 className="shop-card-name">{item.name}</h3>
+          <p className="shop-card-color">{item.color}</p>
+          <p className="shop-card-price">{item.price}</p>
+          <a href={item.link} target="_blank" rel="noreferrer" className="shop-card-btn">
+            Buy Now
+          </a>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 function Shop() {
   return (
     <div className="shop">
       <div className="shop-header">
-        <h1 className="shop-title">AnimeMerch Edition</h1>
-        <p className="shop-subtitle">----Available Until September 30th 2026----</p>
+        <div className="shop-header-content">
+          <h1 className="shop-title">One Piece Collection Edition</h1>
+          <p className="shop-subtitle">----Available Until September 30th 2026----</p>
+        </div>
       </div>
 
       <div className="shop-section">
@@ -30,19 +192,7 @@ function Shop() {
         </div>
         <div className="shop-grid">
           {tshirts.map((item) => (
-            <div className="shop-card" key={item.id}>
-              <div className="shop-card-image">
-                <img src={item.image} alt={item.name} />
-                <div className="shop-card-badge">{item.color}</div>
-              </div>
-              <div className="shop-card-info">
-                <h3 className="shop-card-name">{item.name}</h3>
-                <p className="shop-card-price">{item.price}</p>
-                <a href={item.link} target="_blank" rel="noreferrer" className="shop-card-btn">
-                  Shop on Bizraa
-                </a>
-              </div>
-            </div>
+            <ShopCard key={item.id} item={item} />
           ))}
         </div>
       </div>

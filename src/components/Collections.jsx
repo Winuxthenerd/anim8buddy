@@ -9,8 +9,8 @@ const collections = [
   { id: 5, title: 'Detective Conan', collectionKey: 'detectiveconan', description: 'A teenage detective shrunk to a child.', searchTitle: 'Detective Conan', searchYear: 1996, color: '#1a1a2e' },
   { id: 6, title: 'Ghost in the Shell', collectionKey: 'ghostintheshell', description: 'The complete cyberpunk animated universe of Ghost in the Shell.', searchTitle: 'Ghost in the Shell', searchYear: 1995, color: '#2c3e50' },
   { id: 7, title: 'Tom and Jerry', collectionKey: 'tomandjerry', description: 'The ultimate cat and mouse rivalry.', searchTitle: 'Tom and Jerry', searchYear: 2021, color: '#e23636' },
-  { id: 8, title: 'One Piece', collectionKey: 'onepiece', description: 'Luffy sails in search of the One Piece.', searchTitle: 'One Piece Film Red', searchYear: 2022, color: '#ff6b35' },
-  { id: 9, title: 'Lupin', collectionKey: 'lupin', description: 'The world\'s greatest thief on stylish heists.', searchTitle: 'Lupin III The First', searchYear: 2019, color: '#1a1a2e' },
+  /*{ id: 8, title: 'One Piece', collectionKey: 'onepiece', description: 'Luffy sails in search of the One Piece.', searchTitle: 'One Piece Film Red', searchYear: 2022, color: '#ff6b35' },
+  { id: 9, title: 'Lupin', collectionKey: 'lupin', description: 'The world\'s greatest thief on stylish heists.', searchTitle: 'Lupin III The First', searchYear: 2019, color: '#1a1a2e' },*/
   { id: 10, title: 'Anime Mix I', collectionKey: 'animemix1', description: 'A curated mix of the finest anime films ever made.', searchTitle: 'Spirited Away', searchYear: 2003, color: '#6c5ce7' },
 ]
 
