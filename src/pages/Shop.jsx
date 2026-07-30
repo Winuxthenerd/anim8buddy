@@ -167,7 +167,7 @@ function ShopCard({ item }) {
           <p className="shop-card-color">{item.color}</p>
           <p className="shop-card-price">{item.price}</p>
           <a href={item.link} target="_blank" rel="noreferrer" className="shop-card-btn">
-            Buy Now
+            Shop on Bizraa
           </a>
         </div>
       </div>
@@ -187,7 +187,7 @@ function Shop() {
 
       <div className="shop-section">
         <div className="shop-section-header">
-          <h2 className="shop-section-title">T-Shirts</h2>
+          <h2 className="shop-section-title">T-Shirts & Hoodies</h2>
           <span className="shop-badge">New Arrivals</span>
         </div>
         <div className="shop-grid">
