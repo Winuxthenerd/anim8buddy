@@ -34,8 +34,8 @@ const movies = [
   { title: 'Toy Story 5', year: 2026, description: 'The beloved toys return for another adventure.' },
 ]
 
-function PixarPage() {
-  return <StudioPage name="Pixar" color="#00a8e0" movies={movies} />
+function PixarPage({ highlightMovie }) {
+  return <StudioPage name="Pixar" color="#00a8e0" movies={movies} highlightMovie={highlightMovie} />
 }
 
 export default PixarPage

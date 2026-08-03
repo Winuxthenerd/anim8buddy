@@ -24,8 +24,8 @@ const movies = [
   { title: 'Pookoo', year: 2026, description: 'An upcoming Netflix animated adventure.' },
 ]
 
-function NetflixPage() {
-  return <StudioPage name="Netflix" color="#e50914" movies={movies} />
+function NetflixPage({ highlightMovie }) {
+  return <StudioPage name="Netflix" color="#e50914" movies={movies} highlightMovie={highlightMovie} />
 }
 
 export default NetflixPage

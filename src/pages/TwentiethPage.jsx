@@ -25,8 +25,8 @@ const movies = [
   { title: 'The Day the Earth Blew Up: A Looney Tunes Movie', year: 2025, description: 'Porky Pig and Daffy Duck must save the world from an alien invasion.' },
 ]
 
-function TwentiethPage() {
-  return <StudioPage name="20th Century" color="#333333" movies={movies} />
+function TwentiethPage({ highlightMovie }) {
+  return <StudioPage name="20th Century" color="#333333" movies={movies} highlightMovie={highlightMovie} />
 }
 
 export default TwentiethPage

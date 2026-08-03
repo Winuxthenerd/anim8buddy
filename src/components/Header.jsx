@@ -7,11 +7,15 @@ const allContent = [
   ...allSeries,
 ]
 
-function Header({ setPage }) {
+function Header({ setPage, navigateToSeries, navigateToMovie }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
   const [query, setQuery] = useState('')
-  const [results, setResults] = useState([])
+  const results = query.trim().length < 2
+    ? []
+    : allContent.filter(item =>
+      item.title.toLowerCase().includes(query.toLowerCase())
+    ).slice(0, 8)
   const searchRef = useRef(null)
 
   const navigate = (page) => {
@@ -19,19 +23,7 @@ function Header({ setPage }) {
     setMenuOpen(false)
     setSearchOpen(false)
     setQuery('')
-    setResults([])
   }
-
-  useEffect(() => {
-    if (query.trim().length < 2) {
-      setResults([])
-      return
-    }
-    const filtered = allContent.filter(item =>
-      item.title.toLowerCase().includes(query.toLowerCase())
-    ).slice(0, 8)
-    setResults(filtered)
-  }, [query])
 
   useEffect(() => {
     if (searchOpen && searchRef.current) {
@@ -40,7 +32,17 @@ function Header({ setPage }) {
   }, [searchOpen])
 
   const handleResultClick = (item) => {
-    navigate(item.page)
+    if (item.type === 'series') {
+      navigateToSeries({...item, categoryPage: item.page})
+      setMenuOpen(false)
+      setSearchOpen(false)
+      setQuery('')
+    } else {
+      navigateToMovie(item)
+      setMenuOpen(false)
+      setSearchOpen(false)
+      setQuery('')
+    }
   }
 
   return (
@@ -102,7 +104,6 @@ function Header({ setPage }) {
             onClick={() => {
               setSearchOpen(!searchOpen)
               setQuery('')
-              setResults([])
             }}
         >
             {searchOpen ? (

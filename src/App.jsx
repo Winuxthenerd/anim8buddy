@@ -24,6 +24,7 @@ import BackToTop from './components/BackToTop.jsx'
 function App() {
   const [page, setPage] = useState('home')
   const [selectedSeries, setSelectedSeries] = useState(null)
+  const [highlightMovie, setHighlightMovie] = useState(null)
   const [selectedCollection, setSelectedCollection] = useState(null)
 
   useEffect(() => {
@@ -38,10 +39,14 @@ function App() {
   setSelectedCollection(key)
   setPage('collection-detail')
   }
+  const navigateToMovie = (movie) => {
+    setHighlightMovie(movie.title)
+    setPage(movie.page)
+  }
 
 return (
     <div>
-      <Header setPage={setPage} />
+      <Header setPage={setPage} navigateToSeries={navigateToSeries} navigateToMovie={navigateToMovie} />
       {page === 'home' && (
         <>
           <Hero setPage={setPage} />
@@ -61,12 +66,12 @@ return (
         </>
       )}
       {page === 'collection-detail' && <CollectionDetail collectionKey={selectedCollection} setPage={setPage} />}
-      {page === 'disney' && <DisneyPage />}
-      {page === 'netflix' && <NetflixPage />}
-      {page === 'dreamworks' && <DreamWorksPage />}
-      {page === 'pixar' && <PixarPage />}
-      {page === 'twentieth' && <TwentiethPage />}
-      {page === 'illumination' && <IlluminationPage />}
+      {page === 'disney' && <DisneyPage highlightMovie={highlightMovie} />}
+      {page === 'netflix' && <NetflixPage highlightMovie={highlightMovie} />}
+      {page === 'dreamworks' && <DreamWorksPage highlightMovie={highlightMovie} />}
+      {page === 'pixar' && <PixarPage highlightMovie={highlightMovie} />}
+      {page === 'twentieth' && <TwentiethPage highlightMovie={highlightMovie} />}
+      {page === 'illumination' && <IlluminationPage highlightMovie={highlightMovie} />}
       {page === 'netflix-series' && <SeriesPage category="Netflix Series" setPage={setPage} navigateToSeries={navigateToSeries} />}
       {page === 'korean-series' && <SeriesPage category="Korean Series" setPage={setPage} navigateToSeries={navigateToSeries} />}
       {page === 'japanese-series' && <SeriesPage category="Japanese Series" setPage={setPage} navigateToSeries={navigateToSeries} />}

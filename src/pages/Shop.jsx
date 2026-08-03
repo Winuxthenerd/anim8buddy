@@ -2,17 +2,26 @@ import React, { useState, useEffect } from 'react'
 import './Shop.css'
 import tee1Front from '../assets/shop/tee1-front.jpeg'
 import tee1Back from '../assets/shop/tee1-back.jpeg'
+import tee2front from '../assets/shop/tee2-front.jpeg'
 import tee2Back from '../assets/shop/tee2-back.jpeg'
 import tee3Front from '../assets/shop/tee3-front.jpeg'
+import tee3Back from '../assets/shop/tee3-back.jpeg'
 import tee4Front from '../assets/shop/tee4-front.jpeg'
+import tee4Back from '../assets/shop/tee4-back.jpeg'
 import tee5Front from '../assets/shop/tee5-front.jpeg'
+import tee5Back from '../assets/shop/tee5-back.jpeg'
+import tee6Front from '../assets/shop/tee6-front.jpeg'
 import tee6Back from '../assets/shop/tee6-back.jpeg'
 import tee7Front from '../assets/shop/tee7-front.jpeg'
+import tee7back from '../assets/shop/tee7-back.jpeg'
+import tee8Front from '../assets/shop/tee8-front.jpeg'
 import tee8Back from '../assets/shop/tee8-back.jpeg'
-import tee9Front from '../assets/shop/tee9-front.jpeg'
-import tee10Back from '../assets/shop/tee10-back.jpeg'
+import hoodie1Front from '../assets/shop/hoodie1-front.jpeg'
 import hoodie1Back from '../assets/shop/hoodie1-back.jpeg'
+import hoodie2Front from '../assets/shop/hoodie2-front.jpeg'
 import hoodie2Back from '../assets/shop/hoodie2-back.jpeg'
+import hoodie3Front from '../assets/shop/hoodie3-front.jpeg'
+import hoodie3Back from '../assets/shop/hoodie3-back.jpeg'
 
 
 
@@ -31,17 +40,17 @@ const tshirts = [
     name: 'Monkey D. Luffy Full Body Tee',
     price: '₦5,500',
     color: 'White',
-    front: 'https://placehold.co/400x500/111111/ffffff?text=Front',
+    front: tee2front,
     back: tee2Back,
     link: '#',
   },
   {
     id: 3,
-    name: 'Straw Hat Pirates Unity Tee',
+    name: 'Monkey D. Luffy Unity Tee',
     price: '₦5,500',
-    color: 'White',
+    color: 'Red',
     front: tee3Front,
-    back: 'https://placehold.co/400x500/0057b8/ffffff?text=Back',
+    back: tee3Back,
     link: '#',
   },
   {
@@ -50,7 +59,7 @@ const tshirts = [
     price: '₦5,500',
     color: 'White',
     front: tee4Front,
-    back: 'https://placehold.co/400x500/ff6b35/ffffff?text=Back',
+    back: tee4Back,
     link: '#',
   },
   {
@@ -59,7 +68,7 @@ const tshirts = [
     price: '₦6,000',
     color: 'Red',
     front: tee5Front,
-    back: 'https://placehold.co/400x500/1a1a2e/ffffff?text=Back',
+    back: tee5Back,
     link: '#',
   },
   {
@@ -67,64 +76,55 @@ const tshirts = [
     name: 'Roronoa Zoro Sword Stance Tee',
     price: '₦7,500',
     color: 'White',
-    front: 'https://placehold.co/400x500/111111/ffffff?text=Front',
+    front: tee6Front,
     back: tee6Back,
     link: '#',
   },
   {
     id: 7,
-    name: 'Trafalgar Law Tee',
+    name: 'King of the Pirates Tee',
     price: '₦6,500',
-    color: 'White',
+    color: 'Black',
     front: tee7Front,
-    back: 'https://placehold.co/400x500/111111/ffffff?text=Back',
+    back: tee7back,
     link: '#',
   },
   {
     id: 8,
-    name: 'King of the Pirates Tee',
+    name: 'Monkey D. Luffy Sketch Tee',
     price: '₦6,500',
     color: 'Black',
-    front: 'https://placehold.co/400x500/1a1a2e/ffffff?text=Front',
+    front: tee8Front,
     back: tee8Back,
     link: '#',
   },
   {
     id: 9,
-    name: 'Roronoa Zoro Tee ',
-    price: '₦6,500',
-    color: 'Grey',
-    front: tee9Front,
-    back: 'https://placehold.co/400x500/0057b8/ffffff?text=Back',
-    link: '#',
-  },
-  {
-    id: 10,
-    name: 'Monkey D. Luffy Sketch Tee',
-    price: '₦6,500',
-    color: 'Black',
-    front: 'https://placehold.co/400x500/111111/ffffff?text=Front',
-    back: tee10Back,
-    link: '#',
-  },
-  {
-    id: 11,
     name: 'Luffy, Zoro, and Sanji Hoodie',
     price: '₦6,500',
     color: 'Black',
-    front: 'https://placehold.co/400x500/1a1a2e/ffffff?text=Front',
+    front: hoodie1Front,
     back: hoodie1Back,
     link: '#',
   },
   {
-    id: 12,
+    id: 10,
     name: 'Monkey D. Luffy Collage Hoodie',
     price: '₦6,500',
     color: 'White',
-    front: 'https://placehold.co/400x500/e23636/ffffff?text=Front',
+    front: hoodie2Front,
     back: hoodie2Back,
     link: '#',
   },
+  {
+    id: 11,
+    name: 'Roronoa Zoro Three Swords Style Hoodie',
+    price: '₦6,500',
+    color: 'Black',
+    front: hoodie3Front,
+    back: hoodie3Back,
+    link: '#',
+  }
 ]
 
 function ShopCard({ item }) {

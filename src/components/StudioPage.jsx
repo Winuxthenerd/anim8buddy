@@ -1,7 +1,16 @@
+import { useEffect } from 'react'
 import MovieCard from './MovieCard'
 import './StudioPage.css'
 
-function StudioPage({ name, color, movies }) {
+function StudioPage({ name, color, movies, highlightMovie }) {
+  useEffect(() => {
+    if (!highlightMovie) return
+    const el = document.getElementById(`movie-${highlightMovie}`)
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }
+  }, [highlightMovie])
+
   return (
     <div className="studio-page">
       <div className="studio-page-header" style={{ borderBottom: `4px solid ${color}` }}>
@@ -16,6 +25,7 @@ function StudioPage({ name, color, movies }) {
             year={movie.year}
             description={movie.description}
             color={color}
+            highlight={movie.title === highlightMovie}
           />
         ))}
       </div>

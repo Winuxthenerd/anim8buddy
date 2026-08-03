@@ -2,7 +2,7 @@ import  { useState, useEffect } from 'react'
 import { getMoviePoster } from '../tmdb'
 import './MovieCard.css'
 
-function MovieCard({ title, year, description, color, hideButton }) {
+function MovieCard({ title, year, description, color, hideButton, highlight }) {
   const [poster, setPoster] = useState(null)
   const [loading, setLoading] = useState(true)
 
@@ -14,7 +14,7 @@ function MovieCard({ title, year, description, color, hideButton }) {
  }, [title, year])
 
   return (
-    <div className="movie-card">
+    <div id={`movie-${title}`}className={`movie-card${highlight?'movie-card-highlight':''}`}>
       <div className="movie-card-image" style={{ background: color || '#1a1a2e' }}>
         {loading && <span className="mc-loading">Loading...</span>}
         {!loading && poster && (

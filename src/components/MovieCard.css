@@ -93,3 +93,13 @@
 .mc-btn:hover {
   background: #e85d2a;
 }
+.movie-card-highlight {
+  outline: 3px solid #ff6b00;
+  outline-offset: 2px;
+  animation: movieHighlightPulse 1.5s ease-in-out 2;
+}
+
+@keyframes movieHighlightPulse {
+  0%, 100%{outline-color: #ff6b00;}
+  50%{outline-color: #ff6b35;}
+}

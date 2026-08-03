@@ -20,8 +20,8 @@ const movies = [
   { title: 'Minions 3', year: 2026, description: 'The beloved yellow minions return for another adventure.' },
 ]
 
-function IlluminationPage() {
-  return <StudioPage name="Illumination" color="#f5a623" movies={movies} />
+function IlluminationPage({ highlightMovie }) {
+  return <StudioPage name="Illumination" color="#f5a623" movies={movies} highlightMovie={highlightMovie} />
 }
 
 export default IlluminationPage

@@ -54,8 +54,8 @@ const movies = [
   { title: "Gabby's Dollhouse: The Movie", year: 2025, description: 'The beloved animated series makes its big screen debut.' },
 ]
 
-function DreamWorksPage() {
-  return <StudioPage name="DreamWorks" color="#00857d" movies={movies} />
+function DreamWorksPage({ highlightMovie }) {
+  return <StudioPage name="DreamWorks" color="#00857d" movies={movies} highlightMovie={highlightMovie} />
 }
 
 export default DreamWorksPage

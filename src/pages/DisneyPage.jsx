@@ -29,8 +29,8 @@ const movies = [
   { title: 'Zootopia 2', year: 2025, description: 'Judy and Nick return for a brand new adventure in the animal city.' },
 ]
 
-function DisneyPage() {
-  return <StudioPage name="Disney" color="#0057b8" movies={movies} />
+function DisneyPage({ highlightMovie }) {
+  return <StudioPage name="Disney" color="#0057b8" movies={movies} highlightMovie={highlightMovie} />
 }
 
 export default DisneyPage
