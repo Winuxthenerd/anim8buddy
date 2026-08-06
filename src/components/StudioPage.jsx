@@ -4,12 +4,15 @@ import './StudioPage.css'
 
 function StudioPage({ name, color, movies, highlightMovie }) {
   useEffect(() => {
-    if (!highlightMovie) return
+  if (!highlightMovie) return
+  const timer = setTimeout(() => {
     const el = document.getElementById(`movie-${highlightMovie}`)
     if (el) {
       el.scrollIntoView({ behavior: 'smooth', block: 'center' })
     }
-  }, [highlightMovie])
+  }, 500)
+  return () => clearTimeout(timer)
+}, [highlightMovie])
 
   return (
     <div className="studio-page">
