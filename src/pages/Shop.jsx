@@ -29,7 +29,7 @@ const tshirts = [
   {
     id: 1,
     name: 'Monkey D. Luffy Red Moon Tee',
-    price: '₦5,500',
+    price: '₦15,000',
     color: 'Black',
     front: tee1Front,
     back: tee1Back,
@@ -38,7 +38,7 @@ const tshirts = [
   {
     id: 2,
     name: 'Monkey D. Luffy Full Body Tee',
-    price: '₦5,500',
+    price: '₦13,500',
     color: 'White',
     front: tee2front,
     back: tee2Back,
@@ -47,7 +47,7 @@ const tshirts = [
   {
     id: 3,
     name: 'Monkey D. Luffy Unity Tee',
-    price: '₦5,500',
+    price: '₦13,000',
     color: 'Red',
     front: tee3Front,
     back: tee3Back,
@@ -56,7 +56,7 @@ const tshirts = [
   {
     id: 4,
     name: 'Monkey D. Luffy Manga Panel Tee',
-    price: '₦5,500',
+    price: '₦13,550',
     color: 'White',
     front: tee4Front,
     back: tee4Back,
@@ -65,7 +65,7 @@ const tshirts = [
   {
     id: 5,
     name: 'Roronoa Zoro Katana Tee',
-    price: '₦6,000',
+    price: '₦12,000',
     color: 'Red',
     front: tee5Front,
     back: tee5Back,
@@ -74,7 +74,7 @@ const tshirts = [
   {
     id: 6,
     name: 'Roronoa Zoro Sword Stance Tee',
-    price: '₦7,500',
+    price: '₦14,000',
     color: 'White',
     front: tee6Front,
     back: tee6Back,
@@ -83,7 +83,7 @@ const tshirts = [
   {
     id: 7,
     name: 'King of the Pirates Tee',
-    price: '₦6,500',
+    price: '₦13,700',
     color: 'Black',
     front: tee7Front,
     back: tee7back,
@@ -92,7 +92,7 @@ const tshirts = [
   {
     id: 8,
     name: 'Monkey D. Luffy Sketch Tee',
-    price: '₦6,500',
+    price: '₦13,500',
     color: 'Black',
     front: tee8Front,
     back: tee8Back,
@@ -101,7 +101,7 @@ const tshirts = [
   {
     id: 9,
     name: 'Luffy, Zoro, and Sanji Hoodie',
-    price: '₦6,500',
+    price: '₦36,500',
     color: 'Black',
     front: hoodie1Front,
     back: hoodie1Back,
@@ -110,7 +110,7 @@ const tshirts = [
   {
     id: 10,
     name: 'Monkey D. Luffy Collage Hoodie',
-    price: '₦6,500',
+    price: '₦32,500',
     color: 'White',
     front: hoodie2Front,
     back: hoodie2Back,
@@ -119,7 +119,7 @@ const tshirts = [
   {
     id: 11,
     name: 'Roronoa Zoro Three Swords Style Hoodie',
-    price: '₦6,500',
+    price: '₦34,000',
     color: 'Black',
     front: hoodie3Front,
     back: hoodie3Back,
