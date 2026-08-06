@@ -1,4 +1,5 @@
 import  { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import {TMDB_API_KEY}from '../tmdb'
 import './CollectionDetail.css'
 
@@ -364,7 +365,8 @@ function HeroImage({ title, year, color }) {
   )
 }
 
-function CollectionDetail({ collectionKey, setPage }) {
+function CollectionDetail({ setPage }) {
+  const { collectionKey } = useParams()
   const collection = collections[collectionKey]
   const [selected, setSelected] = useState({})
 

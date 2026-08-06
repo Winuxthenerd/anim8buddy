@@ -1,5 +1,7 @@
-import  { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import { getMoviePoster } from '../tmdb'
+import { allSeries } from '../data'
 import './SeriesDetail.css'
 
 function generateEpisodes(seasonNum, count) {
@@ -16,7 +18,12 @@ const placeholderSeasons = (seasonCount) =>
     episodes: generateEpisodes(i + 1, Math.floor(Math.random() * 12) + 10),
   }))
 
-function SeriesDetail({ series, setPage }) {
+const slugify = (title) =>
+  title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+
+function SeriesDetail({ setPage }) {
+  const { seriesId } = useParams()
+  const series = allSeries.find((s) => slugify(s.title) === seriesId)
   const [poster, setPoster] = useState(null)
   const [openSeason, setOpenSeason] = useState(null)
 
@@ -29,6 +36,7 @@ function SeriesDetail({ series, setPage }) {
   if (!series) return null
 
   const seasons = placeholderSeasons(series.seasons)
+  const categoryPage = series.page
 
   return (
     <div className="series-detail">
@@ -37,7 +45,7 @@ function SeriesDetail({ series, setPage }) {
           <img src={poster} alt={series.title} className="sd-backdrop" />
         )}
         <div className="sd-hero-overlay">
-          <button className="sd-back-btn" onClick={() => setPage(series.categoryPage)}>
+          <button className="sd-back-btn" onClick={() => setPage(categoryPage)}>
             ← Back
           </button>
           <h1 className="sd-title">{series.title}</h1>

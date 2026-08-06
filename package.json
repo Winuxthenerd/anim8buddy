@@ -1,20 +1,21 @@
 {
   "name": "animedive",
-  "homepage": "https://Winuxthenerd.github.io/anim8buddy", 
+  "homepage": "https://Winuxthenerd.github.io/anim8buddy",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "predeploy": "npm run build", 
-    "deploy": "gh-pages -d dist",    
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
     "react": "^19.2.7",
-    "react-dom": "^19.2.7"
+    "react-dom": "^19.2.7",
+    "react-router-dom": "^7.18.2"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

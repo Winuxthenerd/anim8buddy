@@ -14,7 +14,7 @@ function MovieCard({ title, year, description, color, hideButton, highlight }) {
  }, [title, year])
 
   return (
-    <div id={`movie-${title}`}className={`movie-card${highlight?'movie-card-highlight':''}`}>
+    <div id={`movie-${title}`}className={`movie-card ${highlight?'movie-card-highlight':''}`}>
       <div className="movie-card-image" style={{ background: color || '#1a1a2e' }}>
         {loading && <span className="mc-loading">Loading...</span>}
         {!loading && poster && (
