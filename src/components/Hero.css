@@ -67,3 +67,25 @@
   height: 580px;
   background: #1a1a2e;
 }
+@media (max-width: 600px) {
+  .hero-overlay {
+    padding: 0 24px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-overlay h1 {
+    font-size: 35px;
+    max-width: 100%;
+  }
+
+  .hero-overlay p {
+    font-size: 15px;
+    max-width: 100%;
+  }
+
+  .hero-btn {
+    padding: 12px 24px;
+    font-size: 15px;
+  }
+}

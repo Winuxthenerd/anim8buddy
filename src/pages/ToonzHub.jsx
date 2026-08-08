@@ -110,7 +110,7 @@ function ToonzHub({ setPage }) {
     <div className="toonzhub">
       <div className="toonzhub-header">
         <h1 className="toonzhub-title">ToonzHub</h1>
-        <p className="toonzhub-subtitle">Browse movies by studio — click View All to see the full catalog.</p>
+        <p className="toonzhub-subtitle">Browse movies by studio <br></br> Click View All to see the full catalog.</p>
       </div>
       {studios.map((studio) => (
         <StudioRow key={studio.name} studio={studio} setPage={setPage} />

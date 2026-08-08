@@ -13,7 +13,7 @@ function Footer({ setPage }) {
             <span className="logo-text">Anim8buddy</span>
           </div>
           <p className="footer-tagline">
-            Your favourite anime and cartoons — downloaded, delivered, enjoyed.
+            Your favourite anime and cartoons downloaded, delivered, enjoyed.
           </p>
         </div>
 

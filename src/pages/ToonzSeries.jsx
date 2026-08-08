@@ -75,7 +75,7 @@ function ToonzSeries({ setPage }) {
     <div className="toonzseries">
       <div className="toonzseries-header">
         <h1 className="toonzseries-title">ToonzSeries</h1>
-        <p className="toonzseries-subtitle">Browse series by category — click View All to see the full catalog.</p>
+        <p className="toonzseries-subtitle">Browse series by category <br></br> Click View All to see the full catalog.</p>
       </div>
       {categories.map((category) => (
         <SeriesRow key={category.name} category={category} setPage={setPage} />
